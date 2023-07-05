@@ -226,8 +226,11 @@ h2 {
   width: 1200px;
   height: 1200px;
   display: grid;
-  grid-template-rows: auto auto auto auto; /* Définit deux lignes de hauteur automatique */
-  grid-template-columns: auto auto auto auto auto; /* Définit deux colonnes égales */
+  grid-template-rows: repeat(
+    4,
+    1fr
+  ); /* Définit deux lignes de hauteur automatique */
+  grid-template-columns: repeat(5, 1fr); /* Définit deux colonnes égales */
   grid-template-areas:
     "mini1 vertical1 mini7 mini9 mini10"
     "mini2 vertical1 mini8 horizontal1 horizontal1"
