@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+  font-size: 36px;
+  color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.demo_grid {
+  display: grid;
+  height: 30vh;
+  width: 30vw;
+  grid-template-rows: auto auto; /* Définit deux lignes de hauteur automatique */
+  grid-template-columns: 1fr 1fr 1fr; /* Définit deux colonnes égales */
+  grid-template-areas:
+    "grosGrid grosGrid grosGrid"
+    "grid1 grid2 grid2"
+    "miniGrid1 miniGrid2 miniGrid3";
+  transition: all 250ms ease;
+}
+.demo_grid:has(.un_grid_imposant:hover) div {
+  height: 20vh;
+  transition: all 250ms ease;
+}
+.demo_grid:has(.un_grid_1:hover) {
+  grid-template-areas:
+    "grid1 grosGrid grosGrid"
+    "grid1 grid2 grid2"
+    "miniGrid1 miniGrid2 miniGrid3";
+  transition: all 250ms ease;
+}
+.demo_grid:has(.un_grid_1:hover) > .un_grid_imposant {
+  width: 10vw;
+  transition: all 250ms ease;
+  transform-origin: right;
+}
+
+.un_grid_imposant {
+  width: 30vw;
+  background-color: orange;
+  height: 10vh;
+  border: 1px solid white;
+  border-radius: 10px;
+  grid-area: grosGrid;
+  transition: all 250ms ease;
+}
+
+.un_grid_1 {
+  transform-origin: bottom;
+  background-color: purple;
+  height: 10vh;
+  border: 1px solid white;
+  border-radius: 10px;
+  grid-area: grid1;
+  transition: all 250ms ease;
+}
+.un_grid_1:hover {
+  grid-area: grid1;
+  grid-row-start: 3;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  height: 20vh;
+  transition: all 250ms ease;
+}
+
+.un_grid_2 {
+  background-color: red;
+  min-height: 10vh;
+  border: 1px solid white;
+  border-radius: 10px;
+  grid-area: grid2;
+  transition: all 250ms ease;
+}
+
+.mini_grid_1 {
+  background-color: yellow;
+  min-height: 10vh;
+  border: 1px solid white;
+  border-radius: 10px;
+  grid-area: miniGrid1;
+  transition: all 250ms ease;
+}
+
+.mini_grid_2 {
+  background-color: pink;
+  min-height: 10vh;
+  border: 1px solid white;
+  border-radius: 10px;
+  grid-area: miniGrid2;
+  transition: all 250ms ease;
+}
+
+.mini_grid_3 {
+  background-color: darkgreen;
+  min-height: 10vh;
+  border: 1px solid white;
+  border-radius: 10px;
+  grid-area: miniGrid3;
+  transition: all 250ms ease;
+}
