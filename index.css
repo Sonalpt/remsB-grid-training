@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
@@ -37,6 +37,7 @@ h2 {
     "grid1 grid2 grid2"
     "miniGrid1 miniGrid2 miniGrid3";
   transition: all 250ms ease;
+  margin-bottom: 35vh;
 }
 .demo_grid:has(.un_grid_imposant:hover) div {
   height: 20vh;
@@ -118,4 +119,193 @@ h2 {
   border-radius: 10px;
   grid-area: miniGrid3;
   transition: all 250ms ease;
+}
+
+/* L'exercice du cours sur les grid et les flex */
+
+/* atelier 1 */
+
+.atelier_1 {
+  width: 90vw;
+  height: 70px;
+  background-color: #3964e8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-bottom: 4px solid #e06e3c;
+  margin-bottom: 10vh;
+}
+.atelier_1 .logo {
+  width: 20%;
+  max-width: 20%;
+}
+.atelier_1 .logo h3 {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+.atelier_1 .navElements {
+  font-weight: 600;
+  width: 80%;
+  text-align: right;
+}
+.atelier_1 .navElements span {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* atelier 2 */
+
+.atelier_2 {
+  width: 90vw;
+  height: 550px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  margin-bottom: 10vh;
+  flex-wrap: wrap;
+}
+.atelier_2 .card {
+  height: 375px;
+  width: 270px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.atelier_2 .card .animal_img {
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50%;
+}
+.atelier_2 .card .infos {
+  height: 50%;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  text-align: start;
+  letter-spacing: 1px;
+  border-left: 4px solid #e06e3c;
+  border-right: 4px solid #e06e3c;
+  border-bottom: 4px solid #e06e3c;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.atelier_2 .card .infos p {
+  height: 60%;
+  padding-top: 5%;
+  font-size: 13px;
+  font-weight: 300;
+}
+.atelier_2 .card .infos p strong {
+  color: #3964e8;
+  font-weight: 600;
+}
+.atelier_2 .card .infos .animal_title {
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #e06e3c;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* atelier 3 */
+
+.gallery {
+  width: 1200px;
+  height: 1200px;
+  display: grid;
+  grid-template-rows: auto auto auto auto; /* Définit deux lignes de hauteur automatique */
+  grid-template-columns: auto auto auto auto auto; /* Définit deux colonnes égales */
+  grid-template-areas:
+    "mini1 vertical1 mini7 mini9 mini10"
+    "mini2 vertical1 mini8 horizontal1 horizontal1"
+    "mini3 mini5 large1 large1 mini11"
+    "mini4 mini6 large1 large1 mini12";
+}
+
+.genericBackground {
+  height: 251px;
+  width: 214px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gallery .mini1 {
+  background-image: url(./assets/gallery/Rectangle\ 67.png);
+  grid-area: mini1;
+}
+.gallery .mini2 {
+  background-image: url(./assets/gallery/Rectangle\ 73.png);
+  grid-area: mini2;
+}
+.gallery .mini3 {
+  background-image: url(./assets/gallery/Rectangle\ 80.png);
+  grid-area: mini3;
+}
+.gallery .mini4 {
+  background-image: url(./assets/gallery/Rectangle\ 83.png);
+  grid-area: mini4;
+}
+.gallery .mini5 {
+  background-image: url(./assets/gallery/Rectangle\ 78.png);
+  grid-area: mini5;
+}
+.gallery .mini6 {
+  background-image: url(./assets/gallery/Rectangle\ 81.png);
+  grid-area: mini6;
+}
+.gallery .mini7 {
+  background-image: url(./assets/gallery/Rectangle\ 69.png);
+  grid-area: mini7;
+}
+.gallery .mini8 {
+  background-image: url(./assets/gallery/Rectangle\ 77.png);
+  grid-area: mini8;
+}
+.gallery .mini9 {
+  background-image: url(./assets/gallery/Rectangle\ 71.png);
+  grid-area: mini9;
+}
+.gallery .mini10 {
+  background-image: url(./assets/gallery/Rectangle\ 72.png);
+  grid-area: mini10;
+}
+.gallery .mini11 {
+  background-image: url(./assets/gallery/Rectangle\ 86.png);
+  grid-area: mini11;
+}
+.gallery .mini12 {
+  background-image: url(./assets/gallery/Rectangle\ 87.png);
+  grid-area: mini12;
+}
+.gallery .vertical {
+  background-image: url(./assets/gallery/Rectangle\ 68.png);
+  grid-area: vertical1;
+  height: 535px;
+  width: 214px;
+}
+.gallery .large {
+  background-image: url(./assets/gallery/Rectangle\ 79.png);
+  grid-area: large1;
+  height: 535px;
+  width: 457px;
+}
+.gallery .horizontal {
+  background-image: url(./assets/gallery/Rectangle\ 75.png);
+  grid-area: horizontal1;
+  height: 251px;
+  width: 458px;
 }
